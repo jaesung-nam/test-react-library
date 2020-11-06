@@ -35,8 +35,11 @@
     "typescript": "^4.0.3"
   },
   "scripts": {
-    "build:type": "tsc",
-    "build": "rollup --config"
+    "build:types": "tsc",
+    "build": "rollup --config && build:types",
+    "lint": "eslint '**/*.{js,ts,tsx}'",
+    "lint:fix": "yarn run lint --fix",
+    "lint:types": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5"
@@ -50,12 +53,15 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn run lint:types && lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
+      "yarn run lint:fix",
+      "prettier --write"
+    ],
+    "*.{md,json,yml}": [
       "prettier --write"
     ]
   }

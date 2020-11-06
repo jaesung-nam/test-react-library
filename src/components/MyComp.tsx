@@ -36,6 +36,7 @@ export const MyComp2: React.FC<MyLibProps> = (props) => {
 };
 
 export const MyComp3: React.FC<MyLibProps> = (props) => {
-  const aa = props.value;
+  const aa: string = props.value;
+  console.log(aa);
   return <div>eqwewqewqeqw</div>;
 };
