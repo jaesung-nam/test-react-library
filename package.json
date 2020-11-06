@@ -1,0 +1,42 @@
+{
+  "name": "test-react-library",
+  "version": "0.0.1",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "src/types/index.d.ts",
+  "repository": "https://github.com/jaesung-nam/test-react-library.git",
+  "author": "jasper.nam <overpowerman@naver.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@types/react": "^16.9.50",
+    "@types/react-dom": "^16.9.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "rollup": "^2.28.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "build:type": "tsc",
+    "build": "rollup --config"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20",
+    "the-answer": "^1.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
