@@ -1,9 +1,9 @@
 {
   "name": "jasper-nam-test-react-library",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "types": "src/types/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "repository": "https://github.com/jaesung-nam/test-react-library.git",
   "author": "jasper.nam <overpowerman@naver.com>",
   "license": "MIT",
