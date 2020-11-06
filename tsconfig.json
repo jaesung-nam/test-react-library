@@ -1,12 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     //"allowJs": true,
     "skipLibCheck": true,
@@ -24,16 +19,8 @@
     "declarationDir": "dist",
     //"emitDeclarationOnly": true,
     //"noEmit": true,
-    "jsx": "react",
-    "types": [
-      "node"
-    ]
+    "jsx": "react"
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
