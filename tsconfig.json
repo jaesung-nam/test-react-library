@@ -10,7 +10,6 @@
     "baseUrl": ".",
     //"allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -22,8 +21,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "declarationDir": "src/types",
-    "emitDeclarationOnly": true,
+    "declarationDir": "dist",
+    //"emitDeclarationOnly": true,
     //"noEmit": true,
     "jsx": "react",
     "types": [

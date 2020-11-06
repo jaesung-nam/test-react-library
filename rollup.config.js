@@ -1,36 +1,41 @@
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import external from "rollup-plugin-peer-deps-external"
-import babel from "@rollup/plugin-babel";
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
 import del from 'rollup-plugin-delete';
+import { eslint } from 'rollup-plugin-eslint';
 import pkg from './package.json';
 
-export default {
-  input: "src/index.tsx",
+const isProduction = process.env.NODE_ENV === 'production';
+
+export default async () => ({
+  input: 'src/index.tsx',
   output: [
     {
       file: pkg.main,
-      format: 'cjs'
+      format: 'cjs',
+      sourcemap: true,
     },
     {
       file: pkg.module,
-      format: 'esm'
-    }
+      format: 'esm',
+      sourcemap: true,
+    },
   ],
-  sourceMap: true,
+  external: ['react', 'react-dom', /@babel\/runtime/],
   plugins: [
     resolve({
-      extensions: [".js", ".jsx", ".ts", ".tsx"]
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
+    eslint(),
     babel({
-      babelHelpers: "bundled",
+      babelHelpers: 'runtime',
       exclude: 'node_modules/**',
-      extensions: [".js", ".jsx", ".ts", ".tsx"]
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
-    external(),
     commonjs({
-      include: "node_modules/**"
+      include: 'node_modules/**',
     }),
-    del({targets: 'dist/*'})
-  ]
-}
+    isProduction && (await import('rollup-plugin-terser')).terser(),
+    del({ targets: 'dist/*' }),
+  ],
+});

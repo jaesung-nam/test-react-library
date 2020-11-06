@@ -13,6 +13,7 @@
 /build
 /target
 /public/libs
+/dist
 
 # misc
 .DS_Store
