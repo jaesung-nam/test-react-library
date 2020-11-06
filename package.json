@@ -1,30 +1,34 @@
 {
-  "name": "test-react-library",
-  "version": "0.0.1",
+  "name": "jasper-nam-test-react-library",
+  "version": "0.0.2",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "src/types/index.d.ts",
   "repository": "https://github.com/jaesung-nam/test-react-library.git",
   "author": "jasper.nam <overpowerman@naver.com>",
   "license": "MIT",
-  "peerDependencies": {
-    "@types/react": "^16.9.50",
-    "@types/react-dom": "^16.9.8",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
   "devDependencies": {
     "@babel/core": "^7.11.6",
+    "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
     "@rollup/plugin-babel": "^5.2.1",
-    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "rollup": "^2.28.2",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "eslint": "^7.12.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "prettier": "^2.1.2",
+    "rollup": "^2.33.1",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-eslint": "^7.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.0.3"
   },
@@ -33,10 +37,15 @@
     "build": "rollup --config"
   },
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "lodash": "^4.17.20",
     "the-answer": "^1.0.0"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "peerDependencies": {
+    "react": "^16.9.55",
+    "react-dom": "^16.9.9"
+  }
 }
